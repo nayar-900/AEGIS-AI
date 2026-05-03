@@ -1,0 +1,8 @@
+streamlit
+leafmap
+folium
+pandas
+geopandas
+scikit-learn
+requests
+joblib
