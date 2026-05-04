@@ -1,4 +1,4 @@
-# ⚡ AEGIS AI — Automated Earthquake Geospatial Intelligence System
+# AEGIS AI — Automated Earthquake Geospatial Intelligence System
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python"/>
@@ -16,7 +16,7 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Problem Statement](#-problem-statement)
@@ -33,7 +33,7 @@
 
 ---
 
-## 🌍 Overview
+## Overview
 
 **AEGIS AI** (Automated Earthquake Geospatial Intelligence System) is a real-time disaster response platform that eliminates the critical gap between seismic detection and emergency rescue deployment. Instead of relying on slow, manual interpretation of geological data, AEGIS AI automatically predicts earthquake impact, identifies safe medical facilities, filters danger zones, and generates dispatch orders — all within **1.5 seconds**.
 
@@ -41,7 +41,7 @@
 
 ---
 
-## 🚨 Problem Statement
+## Problem Statement
 
 After an earthquake strikes, emergency responders face three critical questions:
 1. **What is the scale of damage** given the depth and location?
@@ -52,20 +52,20 @@ Current systems rely on fragmented tools — seismologists use geological softwa
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🛰 **Live USGS Integration** — Fetches real-time global seismic events every 60 seconds
-- 🤖 **AI Impact Prediction** — Random Forest model (R² = 0.85) predicts magnitude and severity
-- 🗺 **Geospatial Routing** — OpenStreetMap queries hospitals, excludes 5 km danger zones, plots safe routes
-- 📊 **Model Comparison** — Benchmarks Random Forest vs. Decision Tree vs. Linear Regression
-- 🚨 **Intelligent Alerts** — Flashing alerts for M ≥ 6.0 events with automated broadcast logs
-- 📋 **Dispatch Orders** — Auto-generates SAR and medical unit deployment plans by severity class
-- 🖥 **Admin Command Center** — Official disaster report generation with downloadable TXT report
-- 🌐 **Satellite Imagery** — Live satellite, hybrid, terrain views via Leafmap & Folium
+- **Live USGS Integration** — Fetches real-time global seismic events every 60 seconds
+- **AI Impact Prediction** — Random Forest model (R² = 0.85) predicts magnitude and severity
+- **Geospatial Routing** — OpenStreetMap queries hospitals, excludes 5 km danger zones, plots safe routes
+- **Model Comparison** — Benchmarks Random Forest vs. Decision Tree vs. Linear Regression
+- **Intelligent Alerts** — Flashing alerts for M ≥ 6.0 events with automated broadcast logs
+- **Dispatch Orders** — Auto-generates SAR and medical unit deployment plans by severity class
+- **Admin Command Center** — Official disaster report generation with downloadable TXT report
+- **Satellite Imagery** — Live satellite, hybrid, terrain views via Leafmap & Folium
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```
 USGS Live API (60s poll)
@@ -107,14 +107,14 @@ Impact Score = (Magnitude × Population Density) / log(Depth + 1)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 DISASTER_RESPONSE_SYSTEM/
 │
-├── 📄 Home.py                        # Main entry point — Global Seismic Heatmap
+├── Home.py                        # Main entry point — Global Seismic Heatmap
 │
-├── 📁 pages/
+├── pages/
 │   ├── 1_Data_Analysis.py            # Geospatial data purification & visualization
 │   ├── 2_AI_Training.py              # ML model training, comparison & saving
 │   ├── 3_Live_Monitoring.py          # Real-time global monitoring & flash alerts
@@ -122,25 +122,25 @@ DISASTER_RESPONSE_SYSTEM/
 │   ├── 5_Evacuation_Planning.py      # Safe zone routing via OpenStreetMap
 │   └── 6_Admin_Dashboard.py          # Command center & official report generation
 │
-├── 📁 utils/
+├── utils/
 │   ├── __init__.py
 │   └── data_processor.py             # USGS API fetch + data purification logic
 │
-├── 📁 models/
+├── models/
 │   └── earthquake_model.pkl          # Saved trained Random Forest model
 │
-├── 📁 data/                          # Local data cache
+├── data/                          # Local data cache
 │
-├── 📁 .streamlit/
+├── .streamlit/
 │   └── config.toml                   # Streamlit theme/config settings
 │
-├── 📄 requirements.txt               # All Python dependencies
-└── 📄 pages.txt                      # Page navigation config
+├── requirements.txt               # All Python dependencies
+└── pages.txt                      # Page navigation config
 ```
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.10 or higher
@@ -186,7 +186,7 @@ geopandas
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
 streamlit run Home.py
@@ -194,7 +194,7 @@ streamlit run Home.py
 
 The app will open at `http://localhost:8501` in your browser.
 
-### ⚠️ First-Time Setup Order
+### First-Time Setup Order
 > Follow this sequence on first launch:
 
 | Step | Page | Action |
@@ -208,7 +208,7 @@ The app will open at `http://localhost:8501` in your browser.
 
 ---
 
-## 📦 Module Breakdown
+## Module Breakdown
 
 ### `utils/data_processor.py`
 | Function | Description |
@@ -253,13 +253,13 @@ The app will open at `http://localhost:8501` in your browser.
 
 ---
 
-## 📊 ML Model & Results
+## ML Model & Results
 
 ### Model Comparison (80/20 Train-Test Split, 100 Trees)
 
 | Model | R² Score | RMSE | CV Accuracy |
 |---|---|---|---|
-| ✅ **Random Forest** | **0.835** | **0.4962** | **83.5%** |
+| **Random Forest** | **0.835** | **0.4962** | **83.5%** |
 | Decision Tree | ~0.74 | 0.6725 | 74% |
 | Linear Regression | 0.62 | 0.8355 | 62% |
 
@@ -277,7 +277,7 @@ y = ['magnitude']
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |---|---|
@@ -292,7 +292,7 @@ y = ['magnitude']
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - [ ] **Multi-disaster support** — Integrate wildfire, flood, and tsunami live data feeds
 - [ ] **Database integration** — SQLite/PostgreSQL for historical event storage and trend analysis
@@ -303,16 +303,16 @@ y = ['magnitude']
 
 ---
 
-## 👤 Author
+## Author
 
 **Muhammad Rayan Badar**
-- 🎓 Bachelor of Computer Science — Namal University Mianwali, Pakistan
-- 📧 bscs23f18@namal.edu.pk
-- 📞 +923480989572
+- Bachelor of Computer Science — Namal University, Mianwali, Pakistan
+- bscs23f18@namal.edu.pk
+- +923480989572
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License — feel free to use, modify, and distribute with attribution.
 
@@ -320,5 +320,5 @@ This project is licensed under the MIT License — feel free to use, modify, and
 
 <p align="center">
   Built with ❤️ for smarter disaster response<br/>
-  <b>AEGIS AI — Namal University, 2024</b>
+  <b>AEGIS AI — Namal University, 2025</b>
 </p>
