@@ -3,7 +3,7 @@ os.environ["PYTHONUTF8"] = "1"
 import streamlit as st
 import leafmap.foliumap as leafmap
 from utils.data_processor import fetch_latest_earthquakes, purify_data
-
+#fix navbar
 st.set_page_config(page_title="AEGIS-AI", layout="wide")
 
 st.title("AEGIS-AI")
