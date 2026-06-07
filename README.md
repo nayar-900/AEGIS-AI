@@ -13,6 +13,7 @@
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0d1f3c?style=flat-square&logo=scikitlearn&logoColor=58A6FF)
 ![Pandas](https://img.shields.io/badge/Pandas-0d1f3c?style=flat-square&logo=pandas&logoColor=58A6FF)
 ![Plotly](https://img.shields.io/badge/Plotly-0d1f3c?style=flat-square&logo=plotly&logoColor=58A6FF)
+
 ![USGS API](https://img.shields.io/badge/USGS_API-Live-0a1a0a?style=flat-square&logoColor=22c55e)
 ![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-0a1a0a?style=flat-square&logo=openstreetmap&logoColor=22c55e)
 ![License](https://img.shields.io/badge/License-MIT-1a0000?style=flat-square&logoColor=cc3333)
