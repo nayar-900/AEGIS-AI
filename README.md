@@ -1,71 +1,52 @@
-# AEGIS AI — Automated Earthquake Geospatial Intelligence System
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-  <img src="https://img.shields.io/badge/USGS%20API-Live-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge"/>
-</p>
+<img width="100%" src="https://svg-banners.vercel.app/api?type=glitch&text1=AEGIS%20AI&width=900&height=160&textColor1=58a6ff&textColor2=ffa657" />
 
-<p align="center">
-  <b>Bridging Seismic Detection and Logistical Action via Automated Geospatial Intelligence</b><br/>
-  <i>An AI-powered disaster response system that goes from earthquake detection to rescue dispatch in 1.5 seconds.</i>
-</p>
+<h3>Automated Earthquake Geospatial Intelligence System</h3>
 
----
+<p><i>From raw seismic signal to actionable rescue plan — fully automated, zero human bottleneck.</i></p>
 
-## Table of Contents
+<br/>
 
-- [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
-- [Key Features](#-key-features)
-- [System Architecture](#-system-architecture)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [How to Run](#-how-to-run)
-- [Module Breakdown](#-module-breakdown)
-- [ML Model & Results](#-ml-model--results)
-- [Tech Stack](#-tech-stack)
-- [Future Work](#-future-work)
-- [Author](#-author)
+![Python](https://img.shields.io/badge/Python_3.10+-0d1f3c?style=flat-square&logo=python&logoColor=58A6FF)
+![Streamlit](https://img.shields.io/badge/Streamlit-0d1f3c?style=flat-square&logo=streamlit&logoColor=58A6FF)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0d1f3c?style=flat-square&logo=scikitlearn&logoColor=58A6FF)
+![Pandas](https://img.shields.io/badge/Pandas-0d1f3c?style=flat-square&logo=pandas&logoColor=58A6FF)
+![Plotly](https://img.shields.io/badge/Plotly-0d1f3c?style=flat-square&logo=plotly&logoColor=58A6FF)
+![USGS API](https://img.shields.io/badge/USGS_API-Live-0a1a0a?style=flat-square&logoColor=22c55e)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-0a1a0a?style=flat-square&logo=openstreetmap&logoColor=22c55e)
+![License](https://img.shields.io/badge/License-MIT-1a0000?style=flat-square&logoColor=cc3333)
+
+<br/>
+
+<a href="#overview">Overview</a> &nbsp;·&nbsp;
+<a href="#architecture">Architecture</a> &nbsp;·&nbsp;
+<a href="#modules">Modules</a> &nbsp;·&nbsp;
+<a href="#ml-model">ML Model</a> &nbsp;·&nbsp;
+<a href="#installation">Installation</a> &nbsp;·&nbsp;
+<a href="#usage">Usage</a>
+
+</div>
 
 ---
 
 ## Overview
 
-**AEGIS AI** (Automated Earthquake Geospatial Intelligence System) is a real-time disaster response platform that eliminates the critical gap between seismic detection and emergency rescue deployment. Instead of relying on slow, manual interpretation of geological data, AEGIS AI automatically predicts earthquake impact, identifies safe medical facilities, filters danger zones, and generates dispatch orders — all within **1.5 seconds**.
+**AEGIS AI** eliminates the critical gap between seismic detection and emergency rescue deployment. Instead of relying on slow, manual interpretation of geological data across fragmented tools, AEGIS automatically predicts earthquake impact, identifies safe medical facilities, filters danger zones, and generates dispatch orders — all within **1.5 seconds**.
 
-> "From raw seismic signal to actionable rescue plan — fully automated, zero human bottleneck."
+Current systems create dangerous data silos: seismologists use geological software while emergency services use separate logistics databases. During the golden hour, this fragmentation costs lives. AEGIS solves this with a unified, automated intelligence pipeline.
 
----
-
-## Problem Statement
-
-After an earthquake strikes, emergency responders face three critical questions:
-1. **What is the scale of damage** given the depth and location?
-2. **How many SAR and medical units** need to be deployed?
-3. **Which nearby medical facilities** are safe and accessible?
-
-Current systems rely on fragmented tools — seismologists use geological software while emergency services use separate logistics databases, creating **data silos** and **dangerous delays** during the golden hour. AEGIS AI solves this with a unified, automated intelligence pipeline.
+```text
+Detection Speed     →  Raw seismic signal to dispatch order in 1.5 seconds
+ML Accuracy         →  Random Forest R² = 0.835, CV Accuracy = 83.5%
+Data Source         →  Live USGS GeoJSON API (60-second poll interval)
+Geospatial Engine   →  OpenStreetMap Overpass API + 5km Danger Zone Filtering
+Alert Threshold     →  Automated flashing alerts for M ≥ 6.0 events
+```
 
 ---
 
-## Key Features
-
-- **Live USGS Integration** — Fetches real-time global seismic events every 60 seconds
-- **AI Impact Prediction** — Random Forest model (R² = 0.85) predicts magnitude and severity
-- **Geospatial Routing** — OpenStreetMap queries hospitals, excludes 5 km danger zones, plots safe routes
-- **Model Comparison** — Benchmarks Random Forest vs. Decision Tree vs. Linear Regression
-- **Intelligent Alerts** — Flashing alerts for M ≥ 6.0 events with automated broadcast logs
-- **Dispatch Orders** — Auto-generates SAR and medical unit deployment plans by severity class
-- **Admin Command Center** — Official disaster report generation with downloadable TXT report
-- **Satellite Imagery** — Live satellite, hybrid, terrain views via Leafmap & Folium
-
----
-
-## System Architecture
+## Architecture
 
 ```
 USGS Live API (60s poll)
@@ -85,7 +66,7 @@ USGS Live API (60s poll)
          ▼
 ┌─────────────────────┐
 │  Geospatial Engine  │  ← OpenStreetMap Overpass API
-│                     │  ← 5 km Danger Zone Filter + Safe Route Mapping
+│                     │  ← 5km Danger Zone Filter + Safe Route Mapping
 └────────┬────────────┘
          │
          ▼
@@ -105,6 +86,13 @@ USGS Live API (60s poll)
 Impact Score = (Magnitude × Population Density) / log(Depth + 1)
 ```
 
+**Engineering decisions worth noting:**
+- USGS API feeds normalized in real time before hitting the prediction pipeline — no stale batch processing
+- Geospatial routing triggers only on filtered high-magnitude events, preventing alert fatigue in field use
+- QoS-style traffic class applied to event severity: minor, moderate, major, critical — each routing to a different dispatch protocol
+- Offline model served from `earthquake_model.pkl` via Joblib; no network dependency at prediction time
+- Streamlit dashboard designed for minimal-click operation: data ingestion to actionable output in under 3 interactions
+
 ---
 
 ## Project Structure
@@ -112,13 +100,13 @@ Impact Score = (Magnitude × Population Density) / log(Depth + 1)
 ```
 DISASTER_RESPONSE_SYSTEM/
 │
-├── Home.py                        # Main entry point — Global Seismic Heatmap
+├── Home.py                           # Entry point — Global Seismic Heatmap
 │
 ├── pages/
-│   ├── 1_Data_Analysis.py            # Geospatial data purification & visualization
-│   ├── 2_AI_Training.py              # ML model training, comparison & saving
+│   ├── 1_Data_Analysis.py            # Data purification & geospatial visualization
+│   ├── 2_AI_Training.py              # Model training, comparison & persistence
 │   ├── 3_Live_Monitoring.py          # Real-time global monitoring & flash alerts
-│   ├── 4_Resource_Allocation.py      # AI risk assessment & dispatch orders
+│   ├── 4_Resource_Allocation.py      # Risk assessment & dispatch order generation
 │   ├── 5_Evacuation_Planning.py      # Safe zone routing via OpenStreetMap
 │   └── 6_Admin_Dashboard.py          # Command center & official report generation
 │
@@ -127,78 +115,102 @@ DISASTER_RESPONSE_SYSTEM/
 │   └── data_processor.py             # USGS API fetch + data purification logic
 │
 ├── models/
-│   └── earthquake_model.pkl          # Saved trained Random Forest model
+│   └── earthquake_model.pkl          # Saved trained Random Forest model (Joblib)
 │
-├── data/                          # Local data cache
-│
-├── .streamlit/
-│   └── config.toml                   # Streamlit theme/config settings
-│
-├── requirements.txt               # All Python dependencies
-└── pages.txt                      # Page navigation config
+├── data/                             # Local data cache
+├── .streamlit/config.toml            # Theme & config settings
+├── requirements.txt
+└── pages.txt
 ```
+
+---
+
+## Modules
+
+### `utils/data_processor.py`
+
+| Function | Description |
+|:--|:--|
+| `fetch_latest_earthquakes()` | Calls USGS GeoJSON API, returns raw DataFrame |
+| `purify_data(df)` | Extracts magnitude, depth, lat, lon, location from raw feed |
+
+### Page Breakdown
+
+| Page | Responsibility |
+|:--|:--|
+| `1_Data_Analysis.py` | Fetches and purifies 10,853+ seismic records · Magnitude vs Depth scatter · Frequency histogram |
+| `2_AI_Training.py` | Trains RF, Decision Tree, Linear Regression · 5-Fold CV · Saves best model via Joblib |
+| `3_Live_Monitoring.py` | Real-time Folium map · Flashing CSS alerts for M ≥ 6.0 · Timestamped broadcast audit log |
+| `4_Resource_Allocation.py` | Geocodes place names · Predicts magnitude · Calculates impact score · Auto-generates dispatch orders |
+| `5_Evacuation_Planning.py` | Queries OSM Overpass API · Filters 5km danger zone · Plots safe routing · Resilience gap analysis |
+| `6_Admin_Dashboard.py` | System status metrics · Formal report form with `.txt` download · Global alert audit trail |
+
+---
+
+## ML Model
+
+### Model Comparison — 80/20 Split, 100 Trees
+
+<div align="center">
+
+| Model | R² Score | RMSE | CV Accuracy |
+|:--|:-:|:-:|:-:|
+| **Random Forest** | **0.835** | **0.4962** | **83.5%** |
+| Decision Tree | 0.740 | 0.6725 | 74.0% |
+| Linear Regression | 0.620 | 0.8355 | 62.0% |
+
+</div>
+
+**Input Features:**
+```python
+X = ['depth', 'latitude', 'longitude']
+y = ['magnitude']
+```
+
+**Why Random Forest?**
+- Handles non-linear relationships between depth and surface magnitude
+- Ensemble of 100 trees significantly reduces overfitting on real-world seismic outliers
+- Highest R² and CV accuracy across all three compared models
+- Model serialized via Joblib for zero-latency offline prediction at runtime
 
 ---
 
 ## Installation
 
-### Prerequisites
-- Python 3.10 or higher
-- pip package manager
-- Internet connection (for USGS API & OpenStreetMap)
+**Prerequisites:** Python 3.10+, pip, internet connection (USGS API + OpenStreetMap)
 
-### Step 1 — Clone the Repository
 ```bash
-git clone https://github.com/yourusername/AEGIS-AI.git
+# Clone the repository
+git clone https://github.com/nayar-900/AEGIS-AI.git
 cd AEGIS-AI
-```
 
-### Step 2 — Create a Virtual Environment (Recommended)
-```bash
+# Create virtual environment
 python -m venv venv
+source venv/bin/activate        # macOS / Linux
+venv\Scripts\activate           # Windows
 
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
-```
-
-### Step 3 — Install Dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Key Dependencies
+**Key dependencies:**
 ```
-streamlit
-pandas
-numpy
-scikit-learn
-joblib
-folium
-leafmap
-plotly
-requests
-geopy
-geopandas
+streamlit · pandas · numpy · scikit-learn · joblib
+folium · leafmap · plotly · requests · geopy · geopandas
 ```
 
 ---
 
-## How to Run
+## Usage
 
 ```bash
 streamlit run Home.py
 ```
 
-The app will open at `http://localhost:8501` in your browser.
-
-### First-Time Setup Order
-> Follow this sequence on first launch:
+Opens at `http://localhost:8501`. Follow this sequence on first launch:
 
 | Step | Page | Action |
-|---|---|---|
+|:--|:--|:--|
 | 1 | Data Analysis | Fetch and purify live USGS data |
 | 2 | AI Training | Train and save the Random Forest model |
 | 3 | Live Monitoring | View real-time global seismic activity |
@@ -208,117 +220,54 @@ The app will open at `http://localhost:8501` in your browser.
 
 ---
 
-## Module Breakdown
-
-### `utils/data_processor.py`
-| Function | Description |
-|---|---|
-| `fetch_latest_earthquakes()` | Calls USGS GeoJSON API, returns raw DataFrame |
-| `purify_data(df)` | Extracts magnitude, depth, lat, lon, location from raw feed |
-
-### `pages/1_Data_Analysis.py`
-- Fetches and purifies 10,853+ seismic records from USGS
-- Displays Magnitude vs. Depth scatter plot (Plotly dark theme)
-- Shows magnitude frequency distribution histogram
-
-### `pages/2_AI_Training.py`
-- Trains **Random Forest**, **Decision Tree**, and **Linear Regression**
-- 5-Fold Cross Validation on training set
-- Saves best model as `models/earthquake_model.pkl` via Joblib
-- Displays Actual vs. Predicted line chart for the winning model
-
-### `pages/3_Live_Monitoring.py`
-- Real-time USGS feed with color-coded Folium map markers
-- Flashing CSS red alerts for M ≥ 6.0 earthquakes
-- Automated broadcast system with timestamped audit log
-- Filterable by minimum magnitude via sidebar slider
-
-### `pages/4_Resource_Allocation.py`
-- Geocodes any place name using Nominatim (GeoPy)
-- Predicts magnitude using the saved Random Forest model
-- Calculates Impact Score with urban/suburban/rural population multiplier
-- Auto-generates dispatch orders: medical units count + SAR level
-- Satellite view via Leafmap with impact radius circle
-
-### `pages/5_Evacuation_Planning.py`
-- Queries OpenStreetMap Overpass API for hospitals, clinics, community centers
-- Automatically filters out all facilities within the 5 km danger zone
-- Plots dashed yellow routing lines to safe facilities on satellite map
-- Infrastructure resilience gap analysis (capacity vs. required units)
-
-### `pages/6_Admin_Dashboard.py`
-- System status metrics: AI Model, Satellite Sync, Uptime (99.8%)
-- Formal disaster report form with downloadable `.txt` report
-- Global alert audit trail pulled from session broadcast log
-
----
-
-## ML Model & Results
-
-### Model Comparison (80/20 Train-Test Split, 100 Trees)
-
-| Model | R² Score | RMSE | CV Accuracy |
-|---|---|---|---|
-| **Random Forest** | **0.835** | **0.4962** | **83.5%** |
-| Decision Tree | ~0.74 | 0.6725 | 74% |
-| Linear Regression | 0.62 | 0.8355 | 62% |
-
-### Input Features
-```python
-X = ['depth', 'latitude', 'longitude']
-y = ['magnitude']
-```
-
-### Why Random Forest?
-- Handles non-linear relationships between depth and surface magnitude
-- Robust to outliers common in real-world seismic data
-- Ensemble of 100 trees significantly reduces overfitting
-- Highest R² and CV accuracy across all three compared models
-
----
-
 ## Tech Stack
 
+<div align="center">
+
 | Category | Technology |
-|---|---|
-| **Frontend / UI** | Streamlit |
-| **ML / AI** | Scikit-Learn (Random Forest, Decision Tree, Linear Regression) |
-| **Data Processing** | Pandas, NumPy |
-| **Visualization** | Plotly, Folium, Leafmap |
-| **Geospatial** | OpenStreetMap Overpass API, GeoPy, GeoPandas |
-| **Live Data** | USGS Earthquake Hazards API (GeoJSON) |
-| **Model Persistence** | Joblib (.pkl) |
-| **Language** | Python 3.10+ |
+|:--|:--|
+| Frontend / UI | Streamlit |
+| ML / AI | Scikit-Learn — Random Forest · Decision Tree · Linear Regression |
+| Data Processing | Pandas · NumPy |
+| Visualization | Plotly · Folium · Leafmap |
+| Geospatial | OpenStreetMap Overpass API · GeoPy · GeoPandas |
+| Live Data | USGS Earthquake Hazards API (GeoJSON) |
+| Model Persistence | Joblib (.pkl) |
+| Language | Python 3.10+ |
+
+</div>
 
 ---
 
 ## Future Work
 
-- [ ] **Multi-disaster support** — Integrate wildfire, flood, and tsunami live data feeds
-- [ ] **Database integration** — SQLite/PostgreSQL for historical event storage and trend analysis
-- [ ] **WebSocket alerts** — Replace polling with true real-time push notifications
-- [ ] **Mobile application** — Field-level access for first responders on the ground
-- [ ] **Live census data** — Replace static population density with real-time figures
-- [ ] **REST API endpoint** — Expose AEGIS predictions as an external API for third-party integration
+```text
+[ ]  Multi-disaster support — wildfire, flood, and tsunami live data feeds
+[ ]  Database integration — PostgreSQL for historical event storage and trend analysis
+[ ]  WebSocket alerts — replace 60s polling with true real-time push notifications
+[ ]  Mobile application — field-level access for first responders
+[ ]  Live census data — replace static population density with real-time figures
+[ ]  REST API endpoint — expose AEGIS predictions as an external API for third-party integration
+```
 
 ---
 
 ## Author
 
-**Muhammad Rayan Badar**
-- Bachelor of Computer Science — Namal University, Mianwali, Pakistan
-- bscs23f18@namal.edu.pk
-- +923480989572
+**Muhammad Rayan Badar** — BS Computer Science, Namal University Mianwali
+
+<a href="https://www.linkedin.com/in/rayan-badar-b64542367/"><img src="https://img.shields.io/badge/LinkedIn-0a1628?style=flat-square&logo=linkedin&logoColor=58A6FF" /></a>
+&nbsp;
+<a href="mailto:rayanbadar900@gmail.com"><img src="https://img.shields.io/badge/Email-0a1628?style=flat-square&logo=gmail&logoColor=cc3333" /></a>
+&nbsp;
+<a href="https://github.com/nayar-900"><img src="https://img.shields.io/badge/GitHub-0a1628?style=flat-square&logo=github&logoColor=ffffff" /></a>
 
 ---
 
-## License
+<div align="center">
 
-This project is licensed under the MIT License — feel free to use, modify, and distribute with attribution.
+![footer](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 
----
+<sub>AEGIS AI &nbsp;·&nbsp; Namal University 2025 &nbsp;·&nbsp; MIT License</sub>
 
-<p align="center">
-  Built with ❤️ for smarter disaster response<br/>
-  <b>AEGIS AI — Namal University, 2025</b>
-</p>
+</div>
