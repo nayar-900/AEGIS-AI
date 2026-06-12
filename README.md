@@ -40,7 +40,7 @@ Current systems create dangerous data silos: seismologists use geological softwa
 ```text
 Detection Speed     →  Raw seismic signal to dispatch order in 1.5 seconds
 ML Accuracy         →  Random Forest R² = 0.835, CV Accuracy = 83.5%
-Data Source         →  Live USGS GeoJSON API (60-second poll interval)
+Data Source         →  Live USGS GeoJSON API (60-second poll interval) 
 Geospatial Engine   →  OpenStreetMap Overpass API + 5km Danger Zone Filtering
 Alert Threshold     →  Automated flashing alerts for M ≥ 6.0 events
 ```
